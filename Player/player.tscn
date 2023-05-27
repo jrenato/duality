@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxurph16m1826"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_2a34q"]
+[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://assets/monochrome_tilemap_transparent_packed.png" id="2_2p4lx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmdwe"]
+atlas = ExtResource("2_2p4lx")
+region = Rect2(16, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ada3s"]
+atlas = ExtResource("2_2p4lx")
+region = Rect2(64, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86tf3"]
+atlas = ExtResource("2_2p4lx")
+region = Rect2(0, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8ow0"]
+atlas = ExtResource("2_2p4lx")
+region = Rect2(32, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yehee"]
+atlas = ExtResource("2_2p4lx")
+region = Rect2(48, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxntt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmdwe")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ada3s")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86tf3")
+}],
+"loop": false,
+"name": &"start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8ow0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yehee")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0uvb"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2a34q")
+max_jump_height = 40.0
+min_jump_height = 10.0
+double_jump_height = 60.0
+jump_duration = 0.4
+falling_gravity_multiplier = 1.1
+max_acceleration = 1000
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wxntt")
+animation = &"idle"
+autoplay = "start"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_l0uvb")

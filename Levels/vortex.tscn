@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1sqaltwsaun2"]
+
+[ext_resource type="Script" path="res://Levels/vortex.gd" id="1_kpgrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skkkd"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_wibuu"]
+offsets = PackedFloat32Array(0, 0.515152, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0.392157, 1, 1, 0.486275)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_drr1a"]
+gradient = SubResource("Gradient_wibuu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u4aoj"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 1.0
+linear_accel_max = 5.0
+color_ramp = SubResource("GradientTexture1D_drr1a")
+
+[node name="Vortex" type="Area2D"]
+script = ExtResource("1_kpgrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_skkkd")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_u4aoj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
