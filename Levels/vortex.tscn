@@ -22,6 +22,7 @@ orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 linear_accel_min = 1.0
 linear_accel_max = 5.0
+scale_max = 3.0
 color_ramp = SubResource("GradientTexture1D_drr1a")
 
 [node name="Vortex" type="Area2D"]
@@ -31,7 +32,7 @@ script = ExtResource("1_kpgrh")
 shape = SubResource("RectangleShape2D_skkkd")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 16
+amount = 32
 process_material = SubResource("ParticleProcessMaterial_u4aoj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
