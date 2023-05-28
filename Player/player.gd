@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("enter") and vortex_nearby:
+	if Input.is_action_just_pressed("enter") and vortex_nearby and vortex_nearby.active:
 		Events.toggled_dimension.emit()
 		set_collision_layer_value(1, !get_collision_layer_value(1))
 		set_collision_layer_value(2, !get_collision_layer_value(2))
