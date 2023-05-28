@@ -9,10 +9,11 @@ Assets used:
 - Font by [Nimble Beasts Collective](https://nimblebeastscollective.itch.io)
 
 Songs used:
-- "Stay the Course" Kevin MacLeod (incompetech.com)
+
+- "Stay the Course" by Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
-- "Limit 70" Kevin MacLeod (incompetech.com)
+- "Limit 70" by Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0 License
 http://creativecommons.org/licenses/by/4.0/
 

@@ -30,6 +30,8 @@ func _ready() -> void:
 	spawn_player()
 	update_dimensions()
 
+	SoundPlayer.play_song(SoundPlayer.LEVEL_MUSIC)
+
 
 func spawn_player() -> void:
 	current_dimension = starting_dimension
@@ -40,6 +42,7 @@ func spawn_player() -> void:
 
 
 func toggle_dimension() -> void:
+	SoundPlayer.play_sound(SoundPlayer.DIMENSION_TOGGLE)
 	if current_dimension == "White":
 		current_dimension = "Blue"
 	elif current_dimension == "Blue":
@@ -60,6 +63,7 @@ func update_dimensions() -> void:
 
 
 func _on_player_died() -> void:
+	SoundPlayer.play_sound(SoundPlayer.DIE)
 	spawn_timer.start()
 
 

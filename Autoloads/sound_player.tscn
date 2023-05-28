@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvx0p8f3gwvv6"]
+
+[ext_resource type="Script" path="res://Autoloads/sound_player.gd" id="1_8v342"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_8v342")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="AudioPlayers"]
+bus = &"SFX"
+
+[node name="SongAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"

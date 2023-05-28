@@ -35,4 +35,5 @@ func update_active_dimension(active_dimension: String) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		SoundPlayer.play_sound(SoundPlayer.DIAMOND)
 		queue_free()

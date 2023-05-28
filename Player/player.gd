@@ -8,6 +8,7 @@ var vortex_nearby: Area2D
 
 func _ready() -> void:
 	super()
+	jumped.connect(_on_jumped)
 
 
 func _process(delta: float) -> void:
@@ -33,3 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		set_collision_mask_value(1, !get_collision_mask_value(1))
 		set_collision_mask_value(2, !get_collision_mask_value(2))
+
+
+func _on_jumped(is_ground_jump: bool) -> void:
+	SoundPlayer.play_sound(SoundPlayer.JUMP)
