@@ -50,9 +50,11 @@ func update_dimensions() -> void:
 	if current_dimension == "White":
 		tile_map_white.modulate.a = 1.0
 		tile_map_blue.modulate.a = 0.3
+		RenderingServer.set_default_clear_color(Color("222323"))
 	elif current_dimension == "Blue":
 		tile_map_white.modulate.a = 0.3
 		tile_map_blue.modulate.a = 1.0
+		RenderingServer.set_default_clear_color(Color("192626"))
 
 	Events.activated_dimension.emit(current_dimension)
 
