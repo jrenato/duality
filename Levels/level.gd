@@ -31,3 +31,5 @@ func update_dimensions() -> void:
 	elif current_dimension == "Blue":
 		tile_map_white.modulate.a = 0.3
 		tile_map_blue.modulate.a = 1.0
+
+	Events.activated_dimension.emit(current_dimension)

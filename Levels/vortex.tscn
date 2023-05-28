@@ -26,6 +26,8 @@ scale_max = 3.0
 color_ramp = SubResource("GradientTexture1D_drr1a")
 
 [node name="Vortex" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_kpgrh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

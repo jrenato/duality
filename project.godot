@@ -59,6 +59,11 @@ enter={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="White"
+2d_physics/layer_2="Blue"
+
 [physics]
 
 2d/default_gravity=98.0
