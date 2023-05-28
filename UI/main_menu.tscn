@@ -58,6 +58,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_j8rn2")
 text = "Start"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_j8rn2")
+text = "Credits"
+alignment = 0
 
 [node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
@@ -65,6 +74,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_j8rn2")
 text = "Quit"
+alignment = 0
 
 [node name="HSeparator2" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -78,4 +88,5 @@ text = "By karvalho.itch.io"
 horizontal_alignment = 2
 
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

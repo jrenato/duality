@@ -3,7 +3,7 @@ class_name Player
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var vortex_nearby: Area2D
+var enterable_nearby: Area2D
 
 
 func _ready() -> void:
@@ -27,13 +27,21 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("enter") and vortex_nearby and vortex_nearby.active:
-		Events.toggled_dimension.emit()
-		set_collision_layer_value(1, !get_collision_layer_value(1))
-		set_collision_layer_value(2, !get_collision_layer_value(2))
+	if Input.is_action_just_pressed("enter") and enterable_nearby and enterable_nearby.active:
+		if enterable_nearby is Vortex:
+			Events.toggled_dimension.emit()
+			set_collision_layer_value(1, !get_collision_layer_value(1))
+			set_collision_layer_value(2, !get_collision_layer_value(2))
 
-		set_collision_mask_value(1, !get_collision_mask_value(1))
-		set_collision_mask_value(2, !get_collision_mask_value(2))
+			set_collision_mask_value(1, !get_collision_mask_value(1))
+			set_collision_mask_value(2, !get_collision_mask_value(2))
+		elif enterable_nearby is ExitDoor and enterable_nearby.next_level:
+			get_tree().change_scene_to_packed(enterable_nearby.next_level)
+
+
+func die() -> void:
+	Events.player_died.emit()
+	queue_free()
 
 
 func _on_jumped(is_ground_jump: bool) -> void:

@@ -1,4 +1,5 @@
 extends Area2D
+class_name Vortex
 
 @onready var recharge_timer: Timer = $RechargeTimer
 
@@ -11,12 +12,12 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.vortex_nearby = self
+		body.enterable_nearby = self
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
-		body.vortex_nearby = null
+		body.enterable_nearby = null
 
 
 func _on_toggled_dimension() -> void:

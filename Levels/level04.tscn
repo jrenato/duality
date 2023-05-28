@@ -1,0 +1,128 @@
+[gd_scene load_steps=17 format=3 uid="uid://dbt1b0471rbwc"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_ittci"]
+[ext_resource type="PackedScene" uid="uid://bxurph16m1826" path="res://Player/player.tscn" id="2_060aa"]
+[ext_resource type="PackedScene" uid="uid://brkfvbi0ebbp5" path="res://Levels/game_camera.tscn" id="3_g3q6f"]
+[ext_resource type="TileSet" uid="uid://oid3mad24aji" path="res://Levels/tilemapwhite.tres" id="4_4qg7s"]
+[ext_resource type="TileSet" uid="uid://ch7wf05mr1l85" path="res://Levels/tilemapblue.tres" id="5_ahmli"]
+[ext_resource type="PackedScene" uid="uid://d1sqaltwsaun2" path="res://Levels/vortex.tscn" id="6_bam1t"]
+[ext_resource type="PackedScene" uid="uid://bb1hgjhwn0d81" path="res://Levels/diamond.tscn" id="7_paiwd"]
+[ext_resource type="PackedScene" uid="uid://cx5ekubs7wmm3" path="res://Levels/spawn_point.tscn" id="8_0ow8c"]
+[ext_resource type="PackedScene" uid="uid://c2egxttv8ba23" path="res://Levels/exit_door.tscn" id="9_hnhid"]
+[ext_resource type="PackedScene" uid="uid://dqnod14k0xckj" path="res://Enemies/bat.tscn" id="10_bmj1a"]
+[ext_resource type="PackedScene" uid="uid://c5bduisxmwlt3" path="res://Levels/level05.tscn" id="10_np1mj"]
+
+[sub_resource type="Curve2D" id="Curve2D_47pwm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 272, 224, 0, 0, 0, 0, 272, 128, 0, 0, 0, 0, 352, 128, 0, 0, 0, 0, 352, 224, 0, 0, 0, 0, 272, 224)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_5ns6p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 440, 72, 0, 0, 0, 0, 360, 72)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4kjrl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 360, 104, 0, 0, 0, 0, 440, 104)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_jh3lf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 360, 40, 0, 0, 0, 0, 440, 40)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_xb2ga"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 440, 8, 0, 0, 0, 0, 360, 8)
+}
+point_count = 2
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_ittci")
+player_scene = ExtResource("2_060aa")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameCamera" parent="." instance=ExtResource("3_g3q6f")]
+position = Vector2(200, 184)
+limit_left = 0
+limit_bottom = 240
+
+[node name="TileMapWhite" type="TileMap" parent="."]
+tile_set = ExtResource("4_4qg7s")
+format = 2
+layer_0/tile_data = PackedInt32Array(851969, 720896, 14, 786433, 720896, 14, 720897, 720896, 6, 655361, 786432, 14, 589825, 786432, 14, 524289, 786432, 14, 851968, 720896, 6, 786432, 720896, 6, 720896, 720896, 14, 655360, 720896, 6, 589824, 720896, 6, 524288, 720896, 6, 917503, 720896, 14, 851967, 720896, 6, 786431, 720896, 6, 720895, 720896, 6, 655359, 655360, 14, 589823, 655360, 14, 983041, 720896, 6, 917505, 720896, 6, 983040, 720896, 6, 917504, 720896, 6, 1048575, 720896, 6, 983039, 720896, 14, 1048574, 720896, 6, 983038, 720896, 6, 917502, 720896, 6, 851966, 720896, 6, 786430, 720896, 14, 1048573, 720896, 6, 983037, 720896, 6, 917501, 655360, 14, 851965, 655360, 14, 786429, 655360, 14, 720894, 720896, 13, 720893, 655360, 13, 983047, 720896, 6, 917511, 720896, 6, 851975, 720896, 6, 786439, 720896, 6, 720903, 720896, 13, 983046, 720896, 14, 917510, 720896, 14, 851974, 720896, 6, 786438, 720896, 6, 720902, 720896, 13, 983045, 720896, 6, 917509, 720896, 6, 851973, 720896, 14, 786437, 720896, 6, 720901, 720896, 13, 983044, 720896, 14, 917508, 720896, 6, 851972, 720896, 6, 786436, 720896, 6, 720900, 720896, 13, 983043, 720896, 6, 917507, 720896, 14, 851971, 720896, 6, 786435, 720896, 14, 720899, 720896, 13, 983042, 720896, 6, 917506, 720896, 6, 851970, 720896, 6, 786434, 720896, 6, 720898, 720896, 13, 458753, 786432, 14, 393217, 786432, 14, 327681, 786432, 13, 458752, 720896, 14, 393216, 720896, 6, 327680, 720896, 6, 262144, 786432, 13, 524287, 655360, 14, 458751, 655360, 14, 393215, 655360, 14, 327679, 655360, 13, 983048, 786432, 14, 917512, 786432, 14, 851976, 720896, 6, 786440, 720896, 6, 1114120, 786432, 15, 1048584, 786432, 14, 1114119, 720896, 15, 1048583, 720896, 6, 1114118, 720896, 15, 1048582, 720896, 6, 1114117, 720896, 15, 1048581, 720896, 6, 1114116, 720896, 15, 1048580, 720896, 14, 1114115, 720896, 15, 1048579, 720896, 6, 1114114, 720896, 15, 1048578, 720896, 6, 1114113, 720896, 15, 1048577, 720896, 6, 1114112, 720896, 15, 1048576, 720896, 6, 1179647, 720896, 15, 1114111, 720896, 6, 1179646, 720896, 15, 1114110, 720896, 6, 1179645, 720896, 15, 1114109, 720896, 6, 1179644, 655360, 15, 1114108, 655360, 14, 1048572, 655360, 14, 983036, 655360, 13, 655363, 1179648, 1, 720904, 720896, 13, 851983, 786432, 15, 786447, 786432, 14, 720911, 786432, 13, 851982, 720896, 15, 786446, 720896, 14, 720910, 720896, 13, 851981, 720896, 15, 786445, 720896, 14, 720909, 720896, 13, 851980, 720896, 15, 786444, 720896, 6, 720908, 720896, 13, 851979, 720896, 15, 786443, 720896, 6, 720907, 720896, 13, 851978, 720896, 15, 786442, 720896, 6, 720906, 720896, 13, 851977, 720896, 15, 786441, 720896, 6, 720905, 720896, 13, 786452, 786432, 15, 720916, 786432, 14, 655380, 786432, 14, 589844, 786432, 13, 786451, 720896, 15, 720915, 720896, 6, 655379, 720896, 6, 589843, 720896, 13, 786450, 655360, 15, 720914, 655360, 14, 655378, 655360, 14, 589842, 655360, 13, 655386, 786432, 15, 589850, 786432, 13, 655385, 720896, 15, 589849, 720896, 13, 655384, 720896, 15, 589848, 720896, 13, 655383, 655360, 15, 589847, 655360, 13, 589853, 786432, 15, 524317, 786432, 14, 458781, 786432, 13, 589852, 655360, 15, 524316, 655360, 14, 458780, 655360, 13, 327705, 786432, 16, 327704, 655360, 16, 65561, 786432, 16, 65560, 655360, 16, 65569, 786432, 15, 33, 786432, 14, -65503, 786432, 13, 65568, 720896, 15, 32, 720896, 14, -65504, 720896, 13, 65567, 720896, 15, 31, 720896, 6, -65505, 720896, 13, 65566, 720896, 15, 30, 720896, 6, -65506, 720896, 13, 65565, 720896, 15, 29, 720896, 14, -65507, 720896, 13, 65564, 655360, 15, 28, 655360, 14, -65508, 655360, 13)
+
+[node name="TileMapBlue" type="TileMap" parent="."]
+modulate = Color(0, 1, 1, 1)
+tile_set = ExtResource("5_ahmli")
+format = 2
+layer_0/tile_data = PackedInt32Array(786448, 786432, 15, 720912, 786432, 13, 786447, 720896, 15, 720911, 720896, 13, 786446, 720896, 15, 720910, 720896, 13, 786445, 720896, 15, 720909, 720896, 13, 786444, 720896, 15, 720908, 720896, 13, 786443, 720896, 15, 720907, 720896, 13, 786442, 720896, 15, 720906, 720896, 13, 786441, 720896, 15, 720905, 720896, 13, 786440, 655360, 15, 720904, 655360, 13, 720917, 786432, 15, 655381, 786432, 14, 589845, 786432, 13, 720916, 720896, 15, 655380, 720896, 6, 589844, 720896, 13, 720915, 655360, 15, 655379, 655360, 14, 589843, 655360, 13, 458777, 786432, 16, 458776, 655360, 16, 196633, 786432, 16, 196632, 655360, 16)
+
+[node name="Vortex" parent="." instance=ExtResource("6_bam1t")]
+position = Vector2(320, 136)
+
+[node name="Vortex2" parent="." instance=ExtResource("6_bam1t")]
+position = Vector2(400, 104)
+
+[node name="Vortex3" parent="." instance=ExtResource("6_bam1t")]
+position = Vector2(400, 72)
+
+[node name="Vortex4" parent="." instance=ExtResource("6_bam1t")]
+position = Vector2(400, 40)
+
+[node name="Vortex5" parent="." instance=ExtResource("6_bam1t")]
+position = Vector2(400, 8)
+
+[node name="Diamond" parent="." instance=ExtResource("7_paiwd")]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(200, 168)
+collision_mask = 2
+parent_dimension = "Blue"
+
+[node name="Diamond2" parent="." instance=ExtResource("7_paiwd")]
+position = Vector2(400, 136)
+
+[node name="SpawnPoint" parent="." instance=ExtResource("8_0ow8c")]
+position = Vector2(80, 168)
+
+[node name="ExitDoor" parent="." instance=ExtResource("9_hnhid")]
+position = Vector2(504, -24)
+next_level = ExtResource("10_np1mj")
+
+[node name="Bat" parent="." instance=ExtResource("10_bmj1a")]
+modulate = Color(0, 1, 1, 1)
+animation_type = 1
+parent_dimension = "Blue"
+
+[node name="Bat2" parent="." instance=ExtResource("10_bmj1a")]
+curve = SubResource("Curve2D_47pwm")
+speed = 150
+
+[node name="Bat3" parent="." instance=ExtResource("10_bmj1a")]
+curve = SubResource("Curve2D_5ns6p")
+animation_type = 1
+
+[node name="Bat4" parent="." instance=ExtResource("10_bmj1a")]
+modulate = Color(0, 1, 1, 1)
+curve = SubResource("Curve2D_4kjrl")
+animation_type = 1
+parent_dimension = "Blue"
+
+[node name="Bat5" parent="." instance=ExtResource("10_bmj1a")]
+modulate = Color(0, 1, 1, 1)
+curve = SubResource("Curve2D_jh3lf")
+animation_type = 1
+parent_dimension = "Blue"
+
+[node name="Bat6" parent="." instance=ExtResource("10_bmj1a")]
+curve = SubResource("Curve2D_xb2ga")
+animation_type = 1
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

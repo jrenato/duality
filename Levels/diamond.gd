@@ -32,7 +32,6 @@ func update_active_dimension(active_dimension: String) -> void:
 	else:
 		modulate.a = 0.3
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		SoundPlayer.play_sound(SoundPlayer.DIAMOND)

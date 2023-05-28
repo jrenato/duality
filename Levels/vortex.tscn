@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Levels/vortex.gd" id="1_kpgrh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_skkkd"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmrp4"]
+radius = 2.0
 
 [sub_resource type="Gradient" id="Gradient_wibuu"]
 offsets = PackedFloat32Array(0, 0.515152, 1)
@@ -35,7 +35,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_skkkd")
+shape = SubResource("CircleShape2D_rmrp4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 32
