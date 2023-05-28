@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ci0by2cdsq62v"]
+
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://assets/TinyUnicode.ttf" id="1_37ym5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svong"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ogtd"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e58rx"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wk2a"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tl27b"]
+bg_color = Color(0.133333, 0.137255, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpb00"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_hover_color = Color(0, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_37ym5")
+Button/styles/disabled = SubResource("StyleBoxFlat_svong")
+Button/styles/focus = SubResource("StyleBoxFlat_5ogtd")
+Button/styles/hover = SubResource("StyleBoxFlat_e58rx")
+Button/styles/normal = SubResource("StyleBoxFlat_0wk2a")
+Button/styles/pressed = SubResource("StyleBoxFlat_tl27b")
+HSeparator/styles/separator = SubResource("StyleBoxFlat_cpb00")
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_37ym5")
