@@ -10,7 +10,8 @@ extends Area2D
 
 
 func _ready() -> void:
-	Events.activated_dimension.connect(update_active_dimension)
+	if not Engine.is_editor_hint():
+		Events.activated_dimension.connect(update_active_dimension)
 	update_parent_dimension()
 
 
