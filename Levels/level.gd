@@ -14,7 +14,7 @@ class_name Level
 	get:
 		return current_dimension
 
-
+var starting_dimension: String
 var spawn_point: SpawnPoint
 
 
@@ -25,12 +25,14 @@ func _ready() -> void:
 	var spawn_points = get_tree().get_nodes_in_group("spawn_point")
 	if spawn_points.size() > 0:
 		spawn_point = spawn_points[0] as SpawnPoint
-
+	
+	starting_dimension = current_dimension
 	spawn_player()
 	update_dimensions()
 
 
 func spawn_player() -> void:
+	current_dimension = starting_dimension
 	if spawn_point and player_scene:
 		var player: Player = player_scene.instantiate()
 		add_child(player)
