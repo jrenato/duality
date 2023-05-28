@@ -20,6 +20,10 @@ func _process(delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 
+	if position.y > 300:
+		Events.player_died.emit()
+		queue_free()
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("enter") and vortex_nearby:

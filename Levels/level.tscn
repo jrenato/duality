@@ -1,14 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4w8s0jwpen8a"]
+[gd_scene load_steps=9 format=3 uid="uid://c4w8s0jwpen8a"]
 
 [ext_resource type="TileSet" uid="uid://oid3mad24aji" path="res://Levels/tilemapwhite.tres" id="1_onl5i"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_vtri3"]
 [ext_resource type="PackedScene" uid="uid://bxurph16m1826" path="res://Player/player.tscn" id="2_4dlxn"]
+[ext_resource type="PackedScene" uid="uid://brkfvbi0ebbp5" path="res://Levels/game_camera.tscn" id="2_dy47u"]
 [ext_resource type="TileSet" uid="uid://ch7wf05mr1l85" path="res://Levels/tilemapblue.tres" id="2_f40yh"]
 [ext_resource type="PackedScene" uid="uid://d1sqaltwsaun2" path="res://Levels/vortex.tscn" id="4_5ycj7"]
 [ext_resource type="PackedScene" uid="uid://bb1hgjhwn0d81" path="res://Levels/diamond.tscn" id="6_mpge5"]
+[ext_resource type="PackedScene" uid="uid://cx5ekubs7wmm3" path="res://Levels/spawn_point.tscn" id="8_o4n8y"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vtri3")
+player_scene = ExtResource("2_4dlxn")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameCamera" parent="." instance=ExtResource("2_dy47u")]
+position = Vector2(200, 184)
+limit_left = 0
+limit_bottom = 240
 
 [node name="TileMapWhite" type="TileMap" parent="."]
 tile_set = ExtResource("1_onl5i")
@@ -21,12 +32,6 @@ tile_set = ExtResource("2_f40yh")
 format = 2
 layer_0/tile_data = PackedInt32Array(655381, 720896, 13, 655380, 720896, 13, 655379, 655360, 13, 720917, 720896, 6, 720916, 720896, 15, 720915, 655360, 15, 851983, 720896, 15, 786447, 720896, 13, 851982, 720896, 6, 786446, 720896, 13, 851981, 720896, 6, 786445, 720896, 13, 851980, 720896, 14, 786444, 655360, 13, 917518, 786432, 15, 917517, 720896, 15, 917516, 720896, 15, 917515, 655360, 15, 851979, 655360, 13, 851984, 786432, 15, 786448, 786432, 13, 720918, 720896, 6, 655382, 786432, 13, 786455, 786432, 15, 720919, 786432, 13, 786454, 720896, 15, 786453, 655360, 15, 786463, 786432, 15, 720927, 786432, 14, 655391, 786432, 13, 786462, 720896, 15, 720926, 720896, 6, 655390, 720896, 13, 786461, 720896, 15, 720925, 720896, 14, 655389, 720896, 13, 786460, 720896, 15, 720924, 720896, 6, 655388, 720896, 13, 786459, 720896, 15, 720923, 720896, 14, 655387, 720896, 13, 786458, 655360, 15, 720922, 655360, 14, 655386, 655360, 13, 720911, 1048576, 1, 589846, 1179648, 1, 589853, 1114112, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_4dlxn")]
-position = Vector2(88, 168)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
-
 [node name="Vortex" parent="." instance=ExtResource("4_5ycj7")]
 position = Vector2(336, 152)
 
@@ -38,3 +43,8 @@ modulate = Color(0, 1, 1, 1)
 position = Vector2(208, 184)
 collision_mask = 2
 parent_dimension = "Blue"
+
+[node name="SpawnPoint" parent="." instance=ExtResource("8_o4n8y")]
+position = Vector2(80, 168)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
