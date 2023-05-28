@@ -45,7 +45,7 @@ func _ready() -> void:
 
 	if not Engine.is_editor_hint():
 		Events.activated_dimension.connect(update_active_dimension)
-	update_parent_dimension()
+		update_parent_dimension()
 
 
 func set_animation_type() -> void:

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu1oyhaapnkhn"]
+
+[ext_resource type="Theme" uid="uid://ci0by2cdsq62v" path="res://UI/duality_theme.tres" id="1_d8wcg"]
+[ext_resource type="Script" path="res://UI/ending.gd" id="1_mh2f5"]
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://assets/TinyUnicode.ttf" id="3_c6snx"]
+
+[node name="EndingScreen" type="CanvasLayer"]
+script = ExtResource("1_mh2f5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LabelTitle" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_d8wcg")
+theme_override_colors/font_shadow_color = Color(0, 1, 1, 0.207843)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = -2
+theme_override_font_sizes/font_size = 32
+text = "The End"
+horizontal_alignment = 1
+
+[node name="LabelAuthor" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_d8wcg")
+text = "And that's it for now.
+I hope you enjoyed this little experiment.
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_c6snx")
+text = "Quit"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
