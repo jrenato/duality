@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dab00ty1ncrfy"]
+[gd_scene load_steps=4 format=3 uid="uid://dab00ty1ncrfy"]
 
 [ext_resource type="Theme" uid="uid://ci0by2cdsq62v" path="res://UI/duality_theme.tres" id="1_j8rn2"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_rebxl"]
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://assets/TinyUnicode.ttf" id="3_hiw33"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_rebxl")
@@ -22,22 +23,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+[node name="MainMenuPanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 150)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/MainMenuPanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="LabelTitle" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LabelTitle" type="Label" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_j8rn2")
 theme_override_colors/font_shadow_color = Color(0, 1, 1, 0.207843)
@@ -47,12 +49,12 @@ theme_override_font_sizes/font_size = 32
 text = "Duality"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_j8rn2")
 theme_override_constants/separation = 20
 
-[node name="StartButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -60,7 +62,7 @@ theme = ExtResource("1_j8rn2")
 text = "Start"
 alignment = 0
 
-[node name="CreditsButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -68,7 +70,7 @@ theme = ExtResource("1_j8rn2")
 text = "Credits"
 alignment = 0
 
-[node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -76,17 +78,81 @@ theme = ExtResource("1_j8rn2")
 text = "Quit"
 alignment = 0
 
-[node name="HSeparator2" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_j8rn2")
 theme_override_constants/separation = 20
 
-[node name="LabelAuthor" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LabelAuthor" type="Label" parent="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_j8rn2")
 text = "By karvalho.itch.io"
 horizontal_alignment = 2
 
-[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="CreditsHBoxContainer" type="HBoxContainer" parent="ColorRect/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer/CreditsHBoxContainer"]
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_j8rn2")
+text = "Programming: karvalho.itch.io
+PlatformerController2D: Ev01
+Art: Kenney's 1-Bit Platformer Pack
+Font: Nimble Beasts Collective
+"
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_j8rn2")
+theme_override_constants/separation = 40
+
+[node name="ReturnButton" type="Button" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_j8rn2")
+theme_override_fonts/font = ExtResource("3_hiw33")
+text = "Return"
+alignment = 0
+
+[node name="PanelContainer2" type="PanelContainer" parent="ColorRect/CenterContainer/CreditsHBoxContainer"]
+custom_minimum_size = Vector2(160, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_j8rn2")
+text = "Songs by incompetech.com
+
+\"Stay the Course\" by Kevin MacLeod
+\"Limit 70\" by Kevin MacLeod
+
+Licensed under Creative Commons
+By Attribution 4.0 License
+http://creativecommons.org/
+licenses/by/4.0/"
+
+[connection signal="pressed" from="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/MainMenuPanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/CreditsHBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

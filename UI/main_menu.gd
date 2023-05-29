@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var main_menu: PanelContainer = %MainMenuPanelContainer
+@onready var credits_container: HBoxContainer = %CreditsHBoxContainer
+
 
 func _ready() -> void:
 	SoundPlayer.play_song(SoundPlayer.INTRO_MUSIC)
@@ -14,4 +17,10 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	main_menu.visible = false
+	credits_container.visible = true
+
+
+func _on_return_button_pressed() -> void:
+	main_menu.visible = true
+	credits_container.visible = false
