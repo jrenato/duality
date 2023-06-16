@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx5ekubs7wmm3"]
 
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://assets/monochrome_tilemap_transparent_packed.png" id="1_8hud3"]
+[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_8hud3"]
 [ext_resource type="Script" path="res://Levels/spawn_point.gd" id="2_hpgh7"]
 
 [node name="SpawnPoint" type="Sprite2D" groups=["spawn_point"]]

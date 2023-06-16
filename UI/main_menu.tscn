@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ci0by2cdsq62v" path="res://UI/duality_theme.tres" id="1_j8rn2"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_rebxl"]
-[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://assets/TinyUnicode.ttf" id="3_hiw33"]
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="3_31oii"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_rebxl")
@@ -126,7 +126,7 @@ custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_j8rn2")
-theme_override_fonts/font = ExtResource("3_hiw33")
+theme_override_fonts/font = ExtResource("3_31oii")
 text = "Return"
 alignment = 0
 
