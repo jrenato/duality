@@ -1,0 +1,37 @@
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://e4hunpdghwtn"]
+
+[ext_resource type="Script" path="res://Systems/Quest/quest_details.gd" id="1_wsn46"]
+[ext_resource type="Script" path="res://Systems/Quest/quest_data.gd" id="1_ysdrv"]
+[ext_resource type="Script" path="res://Systems/Quest/stage_details.gd" id="2_jsopc"]
+[ext_resource type="Script" path="res://Systems/Quest/objective_details.gd" id="2_ptyg1"]
+
+[sub_resource type="Resource" id="Resource_rgwhj"]
+script = ExtResource("2_ptyg1")
+objective_id = "discover_anomaly"
+objective_name = "Discover the anomaly"
+description = "Find the anomaly's location"
+objective_type = "location"
+quantity = 1
+is_optional = false
+bonus_xp = 0
+
+[sub_resource type="Resource" id="Resource_jnwfd"]
+script = ExtResource("2_jsopc")
+stage_name = "Discover the anomaly"
+description = "There's an anomaly somewhere. Find it."
+objectives = Array[ExtResource("2_ptyg1")]([SubResource("Resource_rgwhj")])
+xp_reward = 10
+currency_reward = Array[Resource("res://Systems/Quest/item_reward.gd")]([])
+item_rewards = {}
+
+[sub_resource type="Resource" id="Resource_f27w2"]
+script = ExtResource("1_wsn46")
+quest_name = "Find out what's happening"
+log_description = "You have to find out what's happening in this world."
+tracking_description = "You have to find out what's happening in this world."
+is_main_quest = true
+stages = Array[ExtResource("2_jsopc")]([SubResource("Resource_jnwfd")])
+
+[resource]
+script = ExtResource("1_ysdrv")
+quests = Array[ExtResource("1_wsn46")]([SubResource("Resource_f27w2")])

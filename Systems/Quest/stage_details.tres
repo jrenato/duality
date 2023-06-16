@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StageDetails" load_steps=2 format=3 uid="uid://b4jjrt3ggjmyy"]
+
+[ext_resource type="Script" path="res://Systems/Quest/stage_details.gd" id="1_20n6a"]
+
+[resource]
+script = ExtResource("1_20n6a")
+stage_name = ""
+description = ""
+objectives = ""
+xp_reward = 0
+currency_reward = Array[Resource("res://Systems/Quest/item_reward.gd")]([])
+item_rewards = {}

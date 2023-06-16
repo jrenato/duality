@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cmb11qcpah7o4"]
-
-[sub_resource type="GDScript" id="GDScript_xqkyv"]
-script/source = "extends Resource
-
-var quest_id : int"
-
-[resource]
-script = SubResource("GDScript_xqkyv")

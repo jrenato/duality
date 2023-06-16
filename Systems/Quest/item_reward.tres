@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dgq8vyyecy1g5"]
+
+[ext_resource type="Script" path="res://Systems/Quest/item_reward.gd" id="1_58e15"]
+
+[resource]
+script = ExtResource("1_58e15")
+item_name = ""
