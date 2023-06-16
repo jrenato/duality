@@ -30,6 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("enter") and enterable_nearby and enterable_nearby.active:
 		if enterable_nearby is Vortex:
 			Events.toggled_dimension.emit()
+			global_position = enterable_nearby.global_position
 			set_collision_layer_value(1, !get_collision_layer_value(1))
 			set_collision_layer_value(2, !get_collision_layer_value(2))
 

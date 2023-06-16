@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/vortex.gd" id="1_kpgrh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rmrp4"]
-radius = 2.0
+radius = 8.0
 
 [sub_resource type="Gradient" id="Gradient_wibuu"]
 offsets = PackedFloat32Array(0, 0.515152, 1)
