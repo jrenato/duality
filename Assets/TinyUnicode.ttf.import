@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dk0lde2ju67sl"
-path="res://.godot/imported/TinyUnicode.ttf-b0c0b8a466888a1d0097c37d0651bad6.fontdata"
+path="res://.godot/imported/TinyUnicode.ttf-d8591dece984075085c7460640fb0c14.fontdata"
 
 [deps]
 
-source_file="res://assets/TinyUnicode.ttf"
-dest_files=["res://.godot/imported/TinyUnicode.ttf-b0c0b8a466888a1d0097c37d0651bad6.fontdata"]
+source_file="res://Assets/TinyUnicode.ttf"
+dest_files=["res://.godot/imported/TinyUnicode.ttf-d8591dece984075085c7460640fb0c14.fontdata"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://briqymh61nbpr"
-path="res://.godot/imported/diamond.wav-5f2bbb968e932d41bda63ff5fb2223fc.sample"
+path="res://.godot/imported/diamond.wav-012fe08d38cc398eff9a61e7e7de8894.sample"
 
 [deps]
 
-source_file="res://assets/diamond.wav"
-dest_files=["res://.godot/imported/diamond.wav-5f2bbb968e932d41bda63ff5fb2223fc.sample"]
+source_file="res://Assets/diamond.wav"
+dest_files=["res://.godot/imported/diamond.wav-012fe08d38cc398eff9a61e7e7de8894.sample"]
 
 [params]
 

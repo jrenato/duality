@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqnod14k0xckj"]
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_d3n5y"]
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://assets/monochrome_tilemap_transparent_packed.png" id="2_5x1dr"]
+[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="2_5x1dr"]
 
 [sub_resource type="Curve2D" id="Curve2D_rsima"]
 _data = {

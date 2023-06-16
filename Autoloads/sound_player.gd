@@ -1,13 +1,13 @@
 extends Node
 
-const INTRO_MUSIC : AudioStream = preload("res://assets/Stay the Course.mp3")
-const LEVEL_MUSIC : AudioStream = preload("res://assets/Limit 70.mp3")
+const INTRO_MUSIC : AudioStream = preload("res://Assets/Stay the Course.mp3")
+const LEVEL_MUSIC : AudioStream = preload("res://Assets/Limit 70.mp3")
 
-const JUMP : AudioStream = preload("res://assets/jump.wav")
-const COIN : AudioStream = preload("res://assets/coin.wav")
-const DIAMOND : AudioStream = preload("res://assets/diamond.wav")
-const DIMENSION_TOGGLE : AudioStream = preload("res://assets/dimension_toggle.wav")
-const DIE : AudioStream = preload("res://assets/die.wav")
+const JUMP : AudioStream = preload("res://Assets/jump.wav")
+const COIN : AudioStream = preload("res://Assets/coin.wav")
+const DIAMOND : AudioStream = preload("res://Assets/diamond.wav")
+const DIMENSION_TOGGLE : AudioStream = preload("res://Assets/dimension_toggle.wav")
+const DIE : AudioStream = preload("res://Assets/die.wav")
 
 @onready var audio_players: Node = $AudioPlayers
 @onready var song_audio_player: AudioStreamPlayer = $SongAudioStreamPlayer
