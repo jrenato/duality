@@ -5,5 +5,5 @@ class_name StageDetails
 @export_multiline var description : String
 @export var objectives : Array[ObjectiveDetails]
 @export var xp_reward : int
-@export var currency_reward : Array[ItemReward]
+@export var currency_reward : int
 @export var item_rewards : Dictionary

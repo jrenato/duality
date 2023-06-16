@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QuestDetails" load_steps=2 format=3 uid="uid://c1csxxbr3sn4u"]
 
-[ext_resource type="Script" path="res://Systems/Quest/quest_details.gd" id="1_romdi"]
+[ext_resource type="Script" path="res://Systems/Quest/Resources/quest_details.gd" id="1_romdi"]
 
 [resource]
 script = ExtResource("1_romdi")
