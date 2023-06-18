@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxurph16m1826"]
+[gd_scene load_steps=11 format=3 uid="uid://bxurph16m1826"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_2a34q"]
 [ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="2_2p4lx"]
@@ -64,6 +64,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0uvb"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_njvon"]
+radius = 7.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_2a34q")
 max_jump_height = 40.0
@@ -82,3 +85,10 @@ autoplay = "start"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_l0uvb")
+
+[node name="InteractionArea2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_njvon")

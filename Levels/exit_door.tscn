@@ -17,6 +17,3 @@ shape = SubResource("RectangleShape2D_ibd0q")
 texture = ExtResource("1_43325")
 region_enabled = true
 region_rect = Rect2(304, 32, 16, 16)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

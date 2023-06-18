@@ -2,13 +2,16 @@ extends PlatformerController2D
 class_name Player
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var interaction_area: Area2D = %InteractionArea2D
 
-var enterable_nearby: Area2D
+var interactable_nearby: Area2D
 
 
 func _ready() -> void:
 	super()
 	jumped.connect(_on_jumped)
+	interaction_area.area_entered.connect(_on_interaction_area_area_entered)
+	interaction_area.area_exited.connect(_on_interaction_area_area_exited)
 
 
 func _process(delta: float) -> void:
@@ -27,17 +30,10 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("enter") and enterable_nearby and enterable_nearby.active:
-		if enterable_nearby is Vortex:
-			Events.toggled_dimension.emit()
-			global_position = enterable_nearby.global_position
-			set_collision_layer_value(1, !get_collision_layer_value(1))
-			set_collision_layer_value(2, !get_collision_layer_value(2))
-
-			set_collision_mask_value(1, !get_collision_mask_value(1))
-			set_collision_mask_value(2, !get_collision_mask_value(2))
-		elif enterable_nearby is ExitDoor and enterable_nearby.next_level:
-			get_tree().change_scene_to_packed(enterable_nearby.next_level)
+	if Input.is_action_just_pressed("enter"):
+		if interactable_nearby and interactable_nearby.active:
+			if interactable_nearby.has_method("interact_with"):
+				interactable_nearby.interact_with(self)
 
 
 func die() -> void:
@@ -47,3 +43,11 @@ func die() -> void:
 
 func _on_jumped(is_ground_jump: bool) -> void:
 	SoundPlayer.play_sound(SoundPlayer.JUMP)
+
+
+func _on_interaction_area_area_entered(area: Area2D) -> void:
+	interactable_nearby = area
+
+
+func _on_interaction_area_area_exited(area: Area2D) -> void:
+	interactable_nearby = null
