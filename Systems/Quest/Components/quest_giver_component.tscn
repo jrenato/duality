@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkwxbsfyg04ng"]
+
+[ext_resource type="Script" path="res://Systems/Quest/Components/quest_giver_component.gd" id="1_37opb"]
+
+[node name="QuestGiverComponent" type="Node"]
+script = ExtResource("1_37opb")

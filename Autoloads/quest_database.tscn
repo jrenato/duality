@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://mx7267xj7ixj"]
+
+[ext_resource type="Script" path="res://Autoloads/quest_database.gd" id="1_22ebu"]
+[ext_resource type="Resource" uid="uid://e4hunpdghwtn" path="res://Systems/Quest/quest_data.tres" id="2_6vufs"]
+
+[node name="QuestDatabase" type="Node"]
+script = ExtResource("1_22ebu")
+quest_data = ExtResource("2_6vufs")

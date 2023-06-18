@@ -1,10 +1,11 @@
 extends PlatformerController2D
 class_name Player
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var interaction_area: Area2D = %InteractionArea2D
+@onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var interaction_area : Area2D = %InteractionArea2D
+@onready var quest_log_component : QuestLogComponent = %QuestLogComponent
 
-var interactable_nearby: Area2D
+var interactable_nearby : Area2D
 
 
 func _ready() -> void:

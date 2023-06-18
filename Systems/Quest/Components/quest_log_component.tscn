@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdps56r6rpulg"]
+
+[ext_resource type="Script" path="res://Systems/Quest/Components/quest_log_component.gd" id="1_lv8rn"]
+[ext_resource type="PackedScene" uid="uid://b862nja7iih4y" path="res://Systems/Quest/quest_base.tscn" id="2_wy5f7"]
+
+[node name="QuestLogComponent" type="Node"]
+script = ExtResource("1_lv8rn")
+quest_base_scene = ExtResource("2_wy5f7")
+
+[node name="CurrentQuests" type="Node" parent="."]
+unique_name_in_owner = true

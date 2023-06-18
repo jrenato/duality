@@ -29,6 +29,7 @@ config/icon="res://icon.svg"
 
 Events="*res://Autoloads/events.gd"
 SoundPlayer="*res://Autoloads/sound_player.tscn"
+QuestDatabase="*res://Autoloads/quest_database.tscn"
 
 [display]
 

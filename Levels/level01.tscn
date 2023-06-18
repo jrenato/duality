@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4w8s0jwpen8a"]
+[gd_scene load_steps=11 format=3 uid="uid://c4w8s0jwpen8a"]
 
 [ext_resource type="TileSet" uid="uid://oid3mad24aji" path="res://Levels/tilemapwhite.tres" id="1_onl5i"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_vtri3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx5ekubs7wmm3" path="res://Levels/spawn_point.tscn" id="8_o4n8y"]
 [ext_resource type="PackedScene" uid="uid://c2egxttv8ba23" path="res://Levels/exit_door.tscn" id="8_rehrj"]
 [ext_resource type="PackedScene" uid="uid://c5oubomrg0noi" path="res://Levels/level02.tscn" id="9_q8e0h"]
+[ext_resource type="PackedScene" uid="uid://cm35j6jsq14nh" path="res://Characters/quest_giver.tscn" id="10_gdi1d"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vtri3")
@@ -42,5 +43,8 @@ position = Vector2(80, 168)
 [node name="ExitDoor" parent="." instance=ExtResource("8_rehrj")]
 position = Vector2(360, 184)
 next_level = ExtResource("9_q8e0h")
+
+[node name="QuestGiver" parent="." instance=ExtResource("10_gdi1d")]
+position = Vector2(208, 176)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

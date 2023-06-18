@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxurph16m1826"]
+[gd_scene load_steps=12 format=3 uid="uid://bxurph16m1826"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_2a34q"]
 [ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="2_2p4lx"]
+[ext_resource type="PackedScene" uid="uid://bdps56r6rpulg" path="res://Systems/Quest/Components/quest_log_component.tscn" id="3_4ikp0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmdwe"]
 atlas = ExtResource("2_2p4lx")
@@ -85,6 +86,9 @@ autoplay = "start"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_l0uvb")
+
+[node name="QuestLogComponent" parent="." instance=ExtResource("3_4ikp0")]
+unique_name_in_owner = true
 
 [node name="InteractionArea2D" type="Area2D" parent="."]
 unique_name_in_owner = true
