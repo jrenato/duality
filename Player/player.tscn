@@ -74,10 +74,11 @@ falling_gravity_multiplier = 1.1
 max_acceleration = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wxntt")
 animation = &"idle"
 autoplay = "start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_l0uvb")
