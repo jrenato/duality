@@ -17,10 +17,9 @@ func interact_with(player : Player) -> void:
 		print("You already have that quest")
 		return
 	
-	# TODO: Display quest
-	# player.quest_log_component.add_new_quest(quest_details)
 	display_quest()
 
 
 func display_quest() -> void:
+	# TODO: Display quest
 	print(quest_details.quest_name)
