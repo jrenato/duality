@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkwxbsfyg04ng"]
+[gd_scene load_steps=3 format=3 uid="uid://bkwxbsfyg04ng"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Components/quest_giver_component.gd" id="1_37opb"]
+[ext_resource type="PackedScene" uid="uid://cvku3xmbdrgyh" path="res://Systems/UI/quest_giver_screen.tscn" id="2_7hvyr"]
 
 [node name="QuestGiverComponent" type="Node"]
 script = ExtResource("1_37opb")
+
+[node name="QuestGiverScreen" parent="." instance=ExtResource("2_7hvyr")]
+unique_name_in_owner = true
+visible = false
