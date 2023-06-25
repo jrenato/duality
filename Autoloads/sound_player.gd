@@ -30,4 +30,3 @@ func play_song(song : AudioStream) -> void:
 	if song_audio_player.stream != song:
 		song_audio_player.stream = song
 		song_audio_player.play()
-
