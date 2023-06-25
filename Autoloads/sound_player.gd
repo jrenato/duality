@@ -9,24 +9,23 @@ const DIAMOND : AudioStream = preload("res://Assets/diamond.wav")
 const DIMENSION_TOGGLE : AudioStream = preload("res://Assets/dimension_toggle.wav")
 const DIE : AudioStream = preload("res://Assets/die.wav")
 
-@onready var audio_players: Node = $AudioPlayers
-@onready var song_audio_player: AudioStreamPlayer = $SongAudioStreamPlayer
+@onready var sound_players: Node = $SoundPlayers
+@onready var music_player: AudioStreamPlayer = $MusicStreamPlayer
 
 
 func play_sound(sound : AudioStream) -> void:
-	for audio_stream_player in audio_players.get_children():
-		# Prevent playing the same sound (it increases the volume)
-		if audio_stream_player.playing and audio_stream_player.stream == sound:
+	for sound_player in sound_players.get_children():
+		# Prevent playing the same sound
+		if sound_player.playing and sound_player.stream == sound:
 			return
 
-	for audio_stream_player in audio_players.get_children():
-		if not audio_stream_player.playing:
-			audio_stream_player.stream = sound
-			audio_stream_player.play()
+		if not sound_player.playing:
+			sound_player.stream = sound
+			sound_player.play()
 			break
 
 
-func play_song(song : AudioStream) -> void:
-	if song_audio_player.stream != song:
-		song_audio_player.stream = song
-		song_audio_player.play()
+func play_music(music : AudioStream) -> void:
+	if music_player.stream != music:
+		music_player.stream = music
+		music_player.play()

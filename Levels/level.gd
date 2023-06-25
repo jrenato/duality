@@ -30,7 +30,7 @@ func _ready() -> void:
 	spawn_player()
 	update_dimensions()
 
-	SoundPlayer.play_song(SoundPlayer.LEVEL_MUSIC)
+	SoundPlayer.play_music(SoundPlayer.LEVEL_MUSIC)
 
 
 func spawn_player() -> void:
