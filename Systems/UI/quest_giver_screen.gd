@@ -16,3 +16,4 @@ func _ready() -> void:
 func set_quest_details(quest_details : QuestDetails) -> void:
 	title_label.text = quest_details.quest_name
 	description_label.text = quest_details.log_description
+	stage_label.text = quest_details.stages[0].description
