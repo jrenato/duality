@@ -52,7 +52,7 @@ one_shot = true
 [node name="GameCamera" parent="." instance=ExtResource("3_g3q6f")]
 position = Vector2(200, 184)
 limit_left = 0
-limit_bottom = 240
+limit_bottom = 270
 
 [node name="TileMapWhite" type="TileMap" parent="."]
 tile_set = ExtResource("4_4qg7s")
