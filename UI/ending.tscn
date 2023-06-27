@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu1oyhaapnkhn"]
+[gd_scene load_steps=6 format=3 uid="uid://cu1oyhaapnkhn"]
 
 [ext_resource type="Theme" uid="uid://ci0by2cdsq62v" path="res://UI/duality_theme.tres" id="1_d8wcg"]
 [ext_resource type="Script" path="res://UI/ending.gd" id="1_mh2f5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4pyu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5xsc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pcta"]
 
 [node name="EndingScreen" type="CanvasLayer"]
 script = ExtResource("1_mh2f5")
@@ -23,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
-custom_minimum_size = Vector2(160, 150)
+custom_minimum_size = Vector2(640, 600)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
@@ -43,24 +49,41 @@ theme = ExtResource("1_d8wcg")
 theme_override_colors/font_shadow_color = Color(0, 1, 1, 0.207843)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = -2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 128
 text = "The End"
 horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_o4pyu")
 
 [node name="LabelText" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_d8wcg")
+theme_override_font_sizes/font_size = 64
 text = "More content will be added in the future.
 I hope you enjoyed this little experiment."
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a5xsc")
 
 [node name="QuitButton" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(35, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_d8wcg")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 alignment = 0
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5pcta")
 
 [connection signal="pressed" from="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_button_pressed"]
