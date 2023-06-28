@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cvku3xmbdrgyh"]
 
-[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_5daq3"]
-[ext_resource type="Script" path="res://Systems/UI/quest_giver_screen.gd" id="1_5ev5p"]
+[ext_resource type="Script" path="res://Systems/Quest/UI/quest_giver_screen.gd" id="1_4ed16"]
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="2_a2hif"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rbh5"]
 bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
@@ -16,7 +16,7 @@ bg_color = Color(0, 0, 0, 1)
 
 [node name="QuestGiverScreen" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_5ev5p")
+script = ExtResource("1_4ed16")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -62,7 +62,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7mscw")
 [node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 64
 text = "Quest Title"
 horizontal_alignment = 1
@@ -75,7 +75,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0f27m")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 48
 text = "The quick brown fox jumps over the lazy dog"
 horizontal_alignment = 1
@@ -94,7 +94,7 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 48
 text = "The quick brown fox jumps over the lazy dog"
 autowrap_mode = 2
@@ -106,7 +106,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 48
 text = "Objectives:"
 autowrap_mode = 2
@@ -138,7 +138,7 @@ alignment = 1
 [node name="AcceptButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 64
 text = "Accept"
 
@@ -150,6 +150,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_3fcaj")
 [node name="DeclineButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_5daq3")
+theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 64
 text = "Decline"
