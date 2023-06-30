@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://css1dj7u5geam"]
+[gd_scene load_steps=6 format=3 uid="uid://css1dj7u5geam"]
 
 [ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_7njy7"]
+[ext_resource type="Script" path="res://Systems/Quest/UI/quest_log_screen.gd" id="1_ovh2n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7g7f"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,6 +13,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 1)
 
 [node name="QuestLogScreen" type="CanvasLayer"]
+script = ExtResource("1_ovh2n")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -62,6 +64,17 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="MainQuestsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -79,6 +92,17 @@ horizontal_alignment = 1
 [node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="SideQuestsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer/VBoxContainer/ScrollContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

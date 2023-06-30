@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c64grf1bj8t7x"]
+
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_3au7u"]
+[ext_resource type="Script" path="res://Systems/Quest/UI/quest_log_screen_entry.gd" id="1_cmt87"]
+
+[node name="QuestLogScreenEntry" type="HBoxContainer"]
+size_flags_vertical = 3
+script = ExtResource("1_cmt87")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_3au7u")
+theme_override_font_sizes/font_size = 32
+text = "Quest Title"
+alignment = 0
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+focus_mode = 0

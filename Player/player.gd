@@ -35,6 +35,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if interactable_nearby and interactable_nearby.active:
 			if interactable_nearby.has_method("interact_with"):
 				interactable_nearby.interact_with(self)
+	if Input.is_action_just_pressed("toggle_log"):
+		quest_log_component.display_quest_log_screen()
 
 
 func die() -> void:

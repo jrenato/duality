@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdps56r6rpulg"]
+[gd_scene load_steps=5 format=3 uid="uid://bdps56r6rpulg"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Components/quest_log_component.gd" id="1_lv8rn"]
 [ext_resource type="PackedScene" uid="uid://b862nja7iih4y" path="res://Systems/Quest/quest_base.tscn" id="2_wy5f7"]
+[ext_resource type="PackedScene" uid="uid://c64grf1bj8t7x" path="res://Systems/Quest/UI/quest_log_screen_entry.tscn" id="3_it16a"]
+[ext_resource type="PackedScene" uid="uid://css1dj7u5geam" path="res://Systems/Quest/UI/quest_log_screen.tscn" id="3_ub6kb"]
 
 [node name="QuestLogComponent" type="Node"]
+process_mode = 3
 script = ExtResource("1_lv8rn")
 quest_base_scene = ExtResource("2_wy5f7")
+quest_log_screen_entry = ExtResource("3_it16a")
 
 [node name="CurrentQuests" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="QuestLogScreen" parent="." instance=ExtResource("3_ub6kb")]
 unique_name_in_owner = true

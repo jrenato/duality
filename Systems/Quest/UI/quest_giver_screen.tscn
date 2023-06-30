@@ -77,7 +77,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 48
-text = "The quick brown fox jumps over the lazy dog"
+text = "Quest Description"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -96,7 +96,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_a2hif")
 theme_override_font_sizes/font_size = 48
-text = "The quick brown fox jumps over the lazy dog"
+text = "Stage Description"
 autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
