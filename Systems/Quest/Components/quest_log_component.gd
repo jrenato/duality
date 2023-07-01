@@ -33,16 +33,22 @@ func add_new_quest(quest_details : QuestDetails) -> void:
 
 
 func display_quest_log_screen() -> void:
-	for quest in quest_log_screen.main_quests.get_children():
-		quest.queue_free()
+	load_quests_log()
+	quest_log_screen.visible = true
+	get_tree().paused = true
 
+
+func load_quests_log() -> void:
+	clear_quests_log()
 	for current_quest in current_quests.get_children():
 		var quest_entry : QuestLogScreenEntry = quest_log_screen_entry.instantiate()
 		quest_log_screen.main_quests.add_child(quest_entry)
 		quest_entry.button.text = current_quest.quest_details.quest_name
 
-	quest_log_screen.visible = true
-	get_tree().paused = true
+
+func clear_quests_log() -> void:
+	for quest_entry in quest_log_screen.main_quests.get_children():
+		quest_entry.queue_free()
 
 
 func hide_quest_log_screen() -> void:

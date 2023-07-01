@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=3 uid="uid://e4hunpdghwtn"]
+[gd_resource type="Resource" load_steps=13 format=3 uid="uid://e4hunpdghwtn"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Resources/quest_details.gd" id="1_e0vob"]
 [ext_resource type="Script" path="res://Systems/Quest/quest_data.gd" id="1_ysdrv"]
@@ -7,19 +7,38 @@
 
 [sub_resource type="Resource" id="Resource_rgwhj"]
 script = ExtResource("2_1deqe")
-objective_id = "discover_anomaly"
-objective_name = "Discover the anomaly"
-description = "Discover the location of the anomaly"
-objective_type = "location"
-quantity = 1
+objective_id = "harvest_carrot"
+objective_name = "Harvest 5 carrots"
+description = "You need to harvest 5 carrots"
+objective_type = "collect"
+quantity = 5
 is_optional = false
 bonus_xp = 0
 
 [sub_resource type="Resource" id="Resource_jnwfd"]
 script = ExtResource("3_ickaf")
-stage_name = "Get more information"
-description = "Something's weird is going on. You need more information."
+stage_name = "Harvest carrots"
+description = "You need to harvest carrots"
 objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_rgwhj")])
+xp_reward = 10
+currency_reward = 5
+item_rewards = {}
+
+[sub_resource type="Resource" id="Resource_xo2bk"]
+script = ExtResource("2_1deqe")
+objective_id = "harvest_turnip"
+objective_name = "Harvest 5 turnips"
+description = "You need to harvest 5 turnips"
+objective_type = "collect"
+quantity = 5
+is_optional = false
+bonus_xp = 0
+
+[sub_resource type="Resource" id="Resource_d6smt"]
+script = ExtResource("3_ickaf")
+stage_name = "Harvest turnips"
+description = "You need to harvest turnips"
+objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_xo2bk")])
 xp_reward = 10
 currency_reward = 5
 item_rewards = {}
@@ -27,12 +46,39 @@ item_rewards = {}
 [sub_resource type="Resource" id="Resource_f27w2"]
 script = ExtResource("1_e0vob")
 quest_id = 1001
-quest_name = "Find out what's happening"
-log_description = "You have to find out what's happening."
-tracking_description = "You have to find out what's happening."
+quest_name = "Reap the harvest"
+log_description = "The harvest is ripe. It's harvest time."
+tracking_description = "Harvest carrots and turnips"
 is_main_quest = true
-stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd")])
+stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd"), SubResource("Resource_d6smt")])
+
+[sub_resource type="Resource" id="Resource_rysmu"]
+script = ExtResource("3_ickaf")
+stage_name = "Harvest carrots"
+description = "You need to harvest 5 carrots"
+objectives = Array[ExtResource("2_1deqe")]([])
+xp_reward = 0
+currency_reward = 5
+item_rewards = {}
+
+[sub_resource type="Resource" id="Resource_ernyc"]
+script = ExtResource("3_ickaf")
+stage_name = "Harvest turnips"
+description = "You need to harvest 5 turnips"
+objectives = Array[ExtResource("2_1deqe")]([])
+xp_reward = 0
+currency_reward = 5
+item_rewards = {}
+
+[sub_resource type="Resource" id="Resource_sjsix"]
+script = ExtResource("1_e0vob")
+quest_id = 0
+quest_name = "Reap extra harvest"
+log_description = "You can reap an extra harvest for more cash"
+tracking_description = "Reap carrots and turnips"
+is_main_quest = false
+stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_rysmu"), SubResource("Resource_ernyc")])
 
 [resource]
 script = ExtResource("1_ysdrv")
-quests = Array[ExtResource("1_e0vob")]([SubResource("Resource_f27w2")])
+quests = Array[ExtResource("1_e0vob")]([SubResource("Resource_f27w2"), SubResource("Resource_sjsix")])
