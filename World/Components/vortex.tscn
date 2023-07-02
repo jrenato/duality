@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1sqaltwsaun2"]
 
-[ext_resource type="Script" path="res://Levels/vortex.gd" id="1_kpgrh"]
+[ext_resource type="Script" path="res://World/Components/vortex.gd" id="1_kpgrh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rmrp4"]
 radius = 8.0

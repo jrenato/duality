@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=13 format=3 uid="uid://e4hunpdghwtn"]
+[gd_resource type="Resource" load_steps=14 format=3 uid="uid://e4hunpdghwtn"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Resources/quest_details.gd" id="1_e0vob"]
 [ext_resource type="Script" path="res://Systems/Quest/quest_data.gd" id="1_ysdrv"]
@@ -52,32 +52,43 @@ tracking_description = "Harvest carrots and turnips"
 is_main_quest = true
 stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd"), SubResource("Resource_d6smt")])
 
+[sub_resource type="Resource" id="Resource_t6lnb"]
+script = ExtResource("2_1deqe")
+objective_id = "read_first_sign"
+objective_name = "Read the first sign"
+description = "You need to read the first sign"
+objective_type = "inspect"
+quantity = 1
+is_optional = false
+bonus_xp = 0
+
+[sub_resource type="Resource" id="Resource_silkt"]
+script = ExtResource("2_1deqe")
+objective_id = "read_second_sign"
+objective_name = "Read the second sign"
+description = "You need to read the second sign"
+objective_type = "inspect"
+quantity = 1
+is_optional = false
+bonus_xp = 0
+
 [sub_resource type="Resource" id="Resource_rysmu"]
 script = ExtResource("3_ickaf")
-stage_name = "Harvest carrots"
-description = "You need to harvest 5 carrots"
-objectives = Array[ExtResource("2_1deqe")]([])
-xp_reward = 0
-currency_reward = 5
-item_rewards = {}
-
-[sub_resource type="Resource" id="Resource_ernyc"]
-script = ExtResource("3_ickaf")
-stage_name = "Harvest turnips"
-description = "You need to harvest 5 turnips"
-objectives = Array[ExtResource("2_1deqe")]([])
-xp_reward = 0
-currency_reward = 5
+stage_name = "Read the signs"
+description = "You need to read all the signs"
+objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_t6lnb"), SubResource("Resource_silkt")])
+xp_reward = 10
+currency_reward = 0
 item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_sjsix"]
 script = ExtResource("1_e0vob")
 quest_id = 2001
-quest_name = "Reap extra harvest"
-log_description = "You can reap an extra harvest for more cash"
-tracking_description = "Reap carrots and turnips"
+quest_name = "Learn about the competition"
+log_description = "You need to understand all the rules for the competition"
+tracking_description = "Learn the rules for the competition"
 is_main_quest = false
-stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_rysmu"), SubResource("Resource_ernyc")])
+stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_rysmu")])
 
 [resource]
 script = ExtResource("1_ysdrv")

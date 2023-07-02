@@ -14,6 +14,7 @@ var current_tracked_quest : String
 
 func _ready() -> void:
 	quest_log_screen.visible = false
+	quest_log_screen.close_button.pressed.connect(_on_close_button_pressed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,6 +36,7 @@ func add_new_quest(quest_details : QuestDetails) -> void:
 func display_quest_log_screen() -> void:
 	load_quests_log()
 	quest_log_screen.visible = true
+	quest_log_screen.quest_details_container.visible = false
 	get_tree().paused = true
 
 
@@ -54,6 +56,8 @@ func load_quests_log() -> void:
 
 func clear_quests_log() -> void:
 	for quest_entry in quest_log_screen.main_quests.get_children():
+		quest_entry.queue_free()
+	for quest_entry in quest_log_screen.side_quests.get_children():
 		quest_entry.queue_free()
 
 
@@ -75,6 +79,11 @@ func track_quest() -> void:
 	
 
 func _on_quest_button_pressed(quest_details : QuestDetails) -> void:
+	quest_log_screen.quest_details_container.visible = true
+
 	quest_log_screen.title_label.text = quest_details.quest_name
 	quest_log_screen.description_label.text = quest_details.log_description
 	quest_log_screen.stage_label.text = quest_details.stages[0].description
+
+func _on_close_button_pressed() -> void:
+	hide_quest_log_screen()

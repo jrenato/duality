@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brkfvbi0ebbp5"]
 
-[ext_resource type="Script" path="res://Levels/game_camera.gd" id="1_0cu25"]
+[ext_resource type="Script" path="res://World/Components/game_camera.gd" id="1_0cu25"]
 
 [node name="GameCamera" type="Camera2D"]
 zoom = Vector2(4, 4)

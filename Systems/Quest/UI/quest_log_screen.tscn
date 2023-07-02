@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://css1dj7u5geam"]
+[gd_scene load_steps=7 format=3 uid="uid://css1dj7u5geam"]
 
 [ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_7njy7"]
 [ext_resource type="Script" path="res://Systems/Quest/UI/quest_log_screen.gd" id="1_ovh2n"]
@@ -11,6 +11,9 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v346h"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8188"]
+bg_color = Color(0.819608, 0.501961, 0.447059, 1)
 
 [node name="QuestLogScreen" type="CanvasLayer"]
 script = ExtResource("1_ovh2n")
@@ -110,22 +113,23 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a7g7f")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer2"]
+[node name="QuestDetailsMarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pd37l")
 
-[node name="TitleLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_7njy7")
@@ -133,11 +137,11 @@ theme_override_font_sizes/font_size = 64
 text = "Quest Title"
 horizontal_alignment = 1
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v346h")
 
-[node name="DescriptionLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/PanelContainer2"]
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/PanelContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
@@ -147,16 +151,16 @@ text = "Quest Description"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="StageLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="StageLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -165,10 +169,10 @@ theme_override_font_sizes/font_size = 48
 text = "Stage Description"
 autowrap_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ObjectivesLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="ObjectivesLabel" type="Label" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -177,22 +181,43 @@ theme_override_font_sizes/font_size = 48
 text = "Objectives:"
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="ColorRect2" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="ColorRect3" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="ColorRect4" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ColorRect4" type="ColorRect" parent="MarginContainer/HBoxContainer/PanelContainer2/QuestDetailsMarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 59.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="CloseButton" type="Button" parent="MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7njy7")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8188")
+text = "X"
