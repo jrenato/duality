@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://btrbt6br5fglg"]
+
+[ext_resource type="Script" path="res://Systems/Quest/UI/quest_log_screen_objective.gd" id="1_g188i"]
+[ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_nfrb7"]
+
+[node name="QuestLogScreenObjective" type="HBoxContainer"]
+script = ExtResource("1_g188i")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_nfrb7")
+theme_override_font_sizes/font_size = 32
+text = "Objective description"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=14 format=3 uid="uid://e4hunpdghwtn"]
+[gd_resource type="Resource" load_steps=15 format=3 uid="uid://e4hunpdghwtn"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Resources/quest_details.gd" id="1_e0vob"]
 [ext_resource type="Script" path="res://Systems/Quest/quest_data.gd" id="1_ysdrv"]
@@ -72,11 +72,21 @@ quantity = 1
 is_optional = false
 bonus_xp = 0
 
+[sub_resource type="Resource" id="Resource_eh2mc"]
+script = ExtResource("2_1deqe")
+objective_id = "read_third_sign"
+objective_name = "Read the third sign"
+description = "You need to read the third sign"
+objective_type = "inspect"
+quantity = 1
+is_optional = false
+bonus_xp = 0
+
 [sub_resource type="Resource" id="Resource_rysmu"]
 script = ExtResource("3_ickaf")
 stage_name = "Read the signs"
 description = "You need to read all the signs"
-objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_t6lnb"), SubResource("Resource_silkt")])
+objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_t6lnb"), SubResource("Resource_silkt"), SubResource("Resource_eh2mc")])
 xp_reward = 10
 currency_reward = 0
 item_rewards = {}

@@ -5,6 +5,7 @@ class_name QuestLogScreen
 @onready var side_quests: VBoxContainer = %SideQuestsContainer
 
 @onready var quest_details_container: MarginContainer = %QuestDetailsMarginContainer
+@onready var objectives_container: VBoxContainer = %ObjectivesContainer
 
 @onready var title_label: Label = %TitleLabel
 @onready var description_label: Label = %DescriptionLabel
