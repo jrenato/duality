@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cm35j6jsq14nh"]
 
-[ext_resource type="Script" path="res://Characters/quest_giver.gd" id="1_paxk5"]
+[ext_resource type="Script" path="res://Characters/npc.gd" id="1_paxk5"]
 [ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_w4jq4"]
 [ext_resource type="PackedScene" uid="uid://bkwxbsfyg04ng" path="res://Systems/Quest/Components/quest_giver_component.tscn" id="2_cclj6"]
 
@@ -28,7 +28,6 @@ script = ExtResource("1_paxk5")
 
 [node name="QuestGiverComponent" parent="." instance=ExtResource("2_cclj6")]
 unique_name_in_owner = true
-quest_id = 1001
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)

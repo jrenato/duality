@@ -72,7 +72,7 @@ item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_sjsix"]
 script = ExtResource("1_e0vob")
-quest_id = 0
+quest_id = 2001
 quest_name = "Reap extra harvest"
 log_description = "You can reap an extra harvest for more cash"
 tracking_description = "Reap carrots and turnips"

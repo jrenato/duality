@@ -1,6 +1,12 @@
 extends Node
+class_name QuestGiverComponent
 
-@export var quest_id : int
+var quest_id : int :
+	set(value):
+		quest_id = value
+		set_quest_details()
+	get:
+		return quest_id
 
 @onready var quest_giver_screen : QuestGiverScreen = %QuestGiverScreen
 
@@ -11,11 +17,13 @@ var interacting_player : Player
 
 func _ready() -> void:
 	quest_giver_screen.visible = false
-	quest_details = QuestDatabase.get_quest(1001)
-	quest_giver_screen.set_quest_details(quest_details)
-
 	quest_giver_screen.accept_button.pressed.connect(_on_accept_button_pressed)
 	quest_giver_screen.decline_button.pressed.connect(_on_decline_button_pressed)
+
+
+func set_quest_details() -> void:
+	quest_details = QuestDatabase.get_quest(quest_id)
+	quest_giver_screen.set_quest_details(quest_details)
 
 
 func interact_with(player : Player) -> void:

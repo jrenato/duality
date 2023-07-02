@@ -19,3 +19,4 @@ alignment = 0
 [node name="CheckBox" type="CheckBox" parent="."]
 layout_mode = 2
 focus_mode = 0
+disabled = true
