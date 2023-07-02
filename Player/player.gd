@@ -49,8 +49,14 @@ func _on_jumped(is_ground_jump: bool) -> void:
 
 
 func _on_interaction_area_area_entered(area: Area2D) -> void:
+	if area.has_method("enter_interaction_area"):
+		area.enter_interaction_area()
+
 	interactable_nearby = area
 
 
 func _on_interaction_area_area_exited(area: Area2D) -> void:
+	if area.has_method("exit_interaction_area"):
+		area.exit_interaction_area()
+
 	interactable_nearby = null
