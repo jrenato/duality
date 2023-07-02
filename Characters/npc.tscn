@@ -34,6 +34,7 @@ position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_ceoem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_yt551")
 animation = &"idle"
