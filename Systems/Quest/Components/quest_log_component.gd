@@ -25,14 +25,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 
-func add_new_quest(quest_details : QuestDetails) -> void:
-	if quest_details.quest_id not in current_active_quests:
+func add_new_quest(quest_id : int) -> void:
+	if quest_id not in current_active_quests:
 		var quest_base : QuestBase  = quest_base_scene.instantiate()
+		var quest_details : QuestDetails = QuestDatabase.get_quest(quest_id)
+
+		current_quests.add_child(quest_base)
 		quest_base.quest_details = quest_details
 		quest_base.current_stage = 0
-		current_quests.add_child(quest_base)
 
-		current_active_quests.append(quest_details.quest_id)
+		current_active_quests.append(quest_id)
 
 
 func display_quest_log_screen() -> void:

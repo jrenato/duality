@@ -26,6 +26,7 @@ func _ready() -> void:
 func set_quest_details() -> void:
 	quest_details = QuestDatabase.get_quest(quest_id)
 	quest_giver_screen.set_quest_details(quest_details)
+
 	var stage : StageDetails = quest_details.stages[0]
 	for objective in stage.objectives:
 		var stage_objective_screen : QuestLogScreenObjective = quest_log_screen_objective.instantiate()
@@ -57,7 +58,7 @@ func hide_quest_screen() -> void:
 
 
 func _on_accept_button_pressed() -> void:
-	interacting_player.quest_log_component.add_new_quest(quest_details)
+	interacting_player.quest_log_component.add_new_quest(quest_id)
 	quest_giver_screen.visible = false
 	get_tree().paused = false
 
