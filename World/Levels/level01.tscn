@@ -52,13 +52,16 @@ quest_id = 2001
 [node name="Sign" parent="." instance=ExtResource("11_uj0c6")]
 position = Vector2(200, 176)
 message = "The competition is simple: whoever collects the coins faster, wins!"
+objective_id = "read_first_sign"
 
 [node name="Sign2" parent="." instance=ExtResource("11_uj0c6")]
 position = Vector2(240, 176)
 message = "There are prizes for the 1st, 2nd and 3rd places!"
+objective_id = "read_second_sign"
 
 [node name="Sign3" parent="." instance=ExtResource("11_uj0c6")]
 position = Vector2(280, 176)
 message = "To enter the competition, you need to pay a fee of 10 coins."
+objective_id = "read_third_sign"
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -3,7 +3,6 @@ class_name QuestLogComponent
 
 @export var quest_base_scene : PackedScene
 @export var quest_log_screen_entry : PackedScene
-@export var quest_log_screen_objective : PackedScene
 
 var current_active_quests : Array[int]
 var completed_quests : Array[int]
@@ -58,23 +57,11 @@ func load_quests_log() -> void:
 		quest_entry.button.pressed.connect(_on_quest_button_pressed.bind(current_quest))
 
 
-func load_objectives_for_stage(stage : StageDetails) -> void:
-	for objective in stage.objectives:
-		var stage_objective_screen : QuestLogScreenObjective = quest_log_screen_objective.instantiate()
-		quest_log_screen.objectives_container.add_child(stage_objective_screen)
-		stage_objective_screen.objective_label.text = "%s %s/%s" % [objective.objective_name, 0, objective.quantity]
-
-
 func clear_quests_log() -> void:
 	for quest_entry in quest_log_screen.main_quests.get_children():
 		quest_entry.queue_free()
 	for quest_entry in quest_log_screen.side_quests.get_children():
 		quest_entry.queue_free()
-
-
-func clear_objectives_log() -> void:
-	for objective_entry in quest_log_screen.objectives_container.get_children():
-		objective_entry.queue_free()
 
 
 func hide_quest_log_screen() -> void:
@@ -94,15 +81,9 @@ func track_quest() -> void:
 	pass
 
 
-func _on_quest_button_pressed(quest : QuestBase) -> void:
+func _on_quest_button_pressed(quest_base : QuestBase) -> void:
+	quest_log_screen.quest_base = quest_base
 	quest_log_screen.quest_details_container.visible = true
-
-	quest_log_screen.title_label.text = quest.quest_details.quest_name
-	quest_log_screen.description_label.text = quest.quest_details.log_description
-	quest_log_screen.stage_label.text = quest.quest_details.stages[quest.current_stage].description
-
-	clear_objectives_log()
-	load_objectives_for_stage(quest.quest_details.stages[quest.current_stage])
 
 
 func _on_close_button_pressed() -> void:

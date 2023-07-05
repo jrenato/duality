@@ -22,6 +22,10 @@ var current_objective_progress : Dictionary
 var is_completed : bool
 
 
+func _ready() -> void:
+	Events.objective_updated.connect(_on_objective_updated)
+
+
 func load_quest_details() -> void:
 	if not quest_id:
 		return
@@ -37,6 +41,14 @@ func load_current_stage_details() -> void:
 	create_current_objective_progress()
 
 
+func get_objective_details(objective_id: String) -> ObjectiveDetails:
+	for objective in current_stage_details.objectives:
+		if objective.objective_id == objective_id:
+			return objective
+
+	return null
+
+
 func create_current_objective_progress() -> void:
 	current_objective_progress.clear()
 
@@ -44,3 +56,15 @@ func create_current_objective_progress() -> void:
 		current_objective_progress[objective_detail.objective_id] = {
 			"quantity": 0
 		}
+
+
+func _on_objective_updated(objective_id: String, objective_type: String, quantity: int) -> void:
+	var objective_details: ObjectiveDetails = get_objective_details(objective_id)
+
+	if current_objective_progress.has(objective_id):
+		var new_quantity: int = current_objective_progress[objective_id]["quantity"] + quantity
+		if new_quantity < objective_details.quantity:
+			current_objective_progress[objective_id]["quantity"] = new_quantity
+		else:
+			# Discard the excedent
+			current_objective_progress[objective_id]["quantity"] = objective_details.quantity

@@ -9,6 +9,8 @@ script = ExtResource("1_g188i")
 [node name="CheckBox" type="CheckBox" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
+disabled = true
 
 [node name="Label" type="Label" parent="."]
 unique_name_in_owner = true

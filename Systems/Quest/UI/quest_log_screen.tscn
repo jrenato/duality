@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://css1dj7u5geam"]
+[gd_scene load_steps=8 format=3 uid="uid://css1dj7u5geam"]
 
 [ext_resource type="FontFile" uid="uid://dk0lde2ju67sl" path="res://Assets/TinyUnicode.ttf" id="1_7njy7"]
 [ext_resource type="Script" path="res://Systems/Quest/UI/quest_log_screen.gd" id="1_ovh2n"]
+[ext_resource type="PackedScene" uid="uid://btrbt6br5fglg" path="res://Systems/Quest/UI/quest_log_screen_objective.tscn" id="2_jjotx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7g7f"]
 bg_color = Color(0, 0, 0, 1)
@@ -17,6 +18,7 @@ bg_color = Color(0.819608, 0.501961, 0.447059, 1)
 
 [node name="QuestLogScreen" type="CanvasLayer"]
 script = ExtResource("1_ovh2n")
+quest_log_screen_objective = ExtResource("2_jjotx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
