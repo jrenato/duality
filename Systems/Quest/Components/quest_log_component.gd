@@ -10,6 +10,7 @@ var current_tracked_quest : String
 
 @onready var current_quests: Node = %CurrentQuests
 @onready var quest_log_screen: QuestLogScreen = %QuestLogScreen
+@onready var quest_notification_screen: CanvasLayer = %QuestNotificationScreen
 
 
 func _ready() -> void:
@@ -69,15 +70,15 @@ func hide_quest_log_screen() -> void:
 	get_tree().paused = false
 
 
-func complete_quest() -> void:
-	pass
-
-
 func query_active_quest(quest_id : int) -> bool:
 	return quest_id in current_active_quests
 
 
 func track_quest() -> void:
+	pass
+
+
+func complete_quest() -> void:
 	pass
 
 
