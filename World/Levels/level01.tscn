@@ -35,7 +35,7 @@ tile_set = ExtResource("2_f40yh")
 format = 2
 
 [node name="SpawnPoint" parent="." instance=ExtResource("8_o4n8y")]
-position = Vector2(80, 168)
+position = Vector2(104, 168)
 
 [node name="ExitDoor" parent="." instance=ExtResource("8_rehrj")]
 position = Vector2(360, 184)
