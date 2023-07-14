@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bb1hgjhwn0d81"]
 
 [ext_resource type="Script" path="res://World/Items/diamond.gd" id="1_idm7y"]
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_mis77"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="2_3o060"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2yk"]
 size = Vector2(8, 8)
@@ -63,7 +63,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ks2yk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mis77")
+texture = ExtResource("2_3o060")
 region_enabled = true
 region_rect = Rect2(32, 48, 16, 16)
 

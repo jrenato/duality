@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cx5ekubs7wmm3"]
 
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_8hud3"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="1_1jsob"]
 [ext_resource type="Script" path="res://World/Components/spawn_point.gd" id="2_hpgh7"]
 
 [node name="SpawnPoint" type="Sprite2D" groups=["spawn_point"]]
 position = Vector2(0, -8)
-texture = ExtResource("1_8hud3")
+texture = ExtResource("1_1jsob")
 region_enabled = true
 region_rect = Rect2(256, 32, 16, 16)
 script = ExtResource("2_hpgh7")
 
 [node name="Point" type="Sprite2D" parent="."]
 position = Vector2(16, 8)
-texture = ExtResource("1_8hud3")
+texture = ExtResource("1_1jsob")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)

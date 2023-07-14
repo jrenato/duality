@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2egxttv8ba23"]
 
 [ext_resource type="Script" path="res://World/Components/exit_door.gd" id="1_4cb55"]
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_43325"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="2_5j3hk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibd0q"]
 size = Vector2(16, 16)
@@ -14,6 +14,6 @@ script = ExtResource("1_4cb55")
 shape = SubResource("RectangleShape2D_ibd0q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_43325")
+texture = ExtResource("2_5j3hk")
 region_enabled = true
 region_rect = Rect2(304, 32, 16, 16)

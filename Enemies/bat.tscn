@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqnod14k0xckj"]
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_d3n5y"]
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="2_5x1dr"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="2_y7ds0"]
 
 [sub_resource type="Curve2D" id="Curve2D_rsima"]
 _data = {
@@ -9,22 +9,22 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eav4c"]
-atlas = ExtResource("2_5x1dr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x301i"]
+atlas = ExtResource("2_y7ds0")
 region = Rect2(48, 304, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r55mc"]
-atlas = ExtResource("2_5x1dr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1nth"]
+atlas = ExtResource("2_y7ds0")
 region = Rect2(64, 304, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6txtv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eav4c")
+"texture": SubResource("AtlasTexture_x301i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r55mc")
+"texture": SubResource("AtlasTexture_x1nth")
 }],
 "loop": true,
 "name": &"flying",
@@ -95,8 +95,7 @@ curve = SubResource("Curve2D_rsima")
 script = ExtResource("1_d3n5y")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(223.141, 168)
-progress = 63.1282
+position = Vector2(160, 168)
 rotates = false
 
 [node name="Area2D" type="Area2D" parent="PathFollow2D"]

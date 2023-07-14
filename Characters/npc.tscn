@@ -1,22 +1,22 @@
 [gd_scene load_steps=7 format=3 uid="uid://cm35j6jsq14nh"]
 
 [ext_resource type="Script" path="res://Characters/npc.gd" id="1_paxk5"]
-[ext_resource type="Texture2D" uid="uid://cqa1rmoq1njky" path="res://Assets/monochrome_tilemap_transparent_packed.png" id="1_w4jq4"]
 [ext_resource type="PackedScene" uid="uid://bkwxbsfyg04ng" path="res://Systems/Quest/Components/quest_giver_component.tscn" id="2_cclj6"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="3_w6jqj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ceoem"]
 radius = 5.0
 height = 14.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08s3x"]
-atlas = ExtResource("1_w4jq4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i6k1"]
+atlas = ExtResource("3_w6jqj")
 region = Rect2(0, 208, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yt551"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_08s3x")
+"texture": SubResource("AtlasTexture_7i6k1")
 }],
 "loop": true,
 "name": &"idle",
