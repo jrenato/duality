@@ -7,18 +7,18 @@
 
 [sub_resource type="Resource" id="Resource_rgwhj"]
 script = ExtResource("2_1deqe")
-objective_id = "harvest_carrot"
-objective_name = "Harvest 5 carrots"
+objective_id = "pick_rocks"
+objective_name = "Pick some rocks"
 description = "You need to harvest 5 carrots"
-objective_type = "collect"
-quantity = 5
+objective_type = "inspect"
+quantity = 1
 is_optional = false
 bonus_xp = 0
 
 [sub_resource type="Resource" id="Resource_jnwfd"]
 script = ExtResource("3_ickaf")
-stage_name = "Harvest carrots"
-description = "You need to harvest carrots"
+stage_name = "Pick some rocks"
+description = "You need to pick some rocks"
 objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_rgwhj")])
 xp_reward = 10
 currency_reward = 5
@@ -26,18 +26,18 @@ item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_xo2bk"]
 script = ExtResource("2_1deqe")
-objective_id = "harvest_turnip"
-objective_name = "Harvest 5 turnips"
-description = "You need to harvest 5 turnips"
-objective_type = "collect"
+objective_id = "break_block"
+objective_name = "Break 5 blocks"
+description = "You need to break 5 blocks"
+objective_type = "kill"
 quantity = 5
 is_optional = false
 bonus_xp = 0
 
 [sub_resource type="Resource" id="Resource_d6smt"]
 script = ExtResource("3_ickaf")
-stage_name = "Harvest turnips"
-description = "You need to harvest turnips"
+stage_name = "Breack some blocks"
+description = "You need break some blocks"
 objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_xo2bk")])
 xp_reward = 10
 currency_reward = 5
@@ -46,9 +46,9 @@ item_rewards = {}
 [sub_resource type="Resource" id="Resource_f27w2"]
 script = ExtResource("1_e0vob")
 quest_id = 1001
-quest_name = "Reap the harvest"
-log_description = "The harvest is ripe. It's harvest time."
-tracking_description = "Harvest carrots and turnips"
+quest_name = "Learn how to shoot"
+log_description = "You need to learn how to shoot rocks."
+tracking_description = "Learn how to shoot rocks"
 is_main_quest = true
 stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd"), SubResource("Resource_d6smt")])
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://diuas2hefmfa1"]
+
+[ext_resource type="Script" path="res://World/Items/rock_pile.gd" id="1_mmlii"]
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="2_delme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp543"]
+size = Vector2(16, 16)
+
+[node name="RockPile" type="Area2D"]
+script = ExtResource("1_mmlii")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_delme")
+region_enabled = true
+region_rect = Rect2(320, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vp543")
