@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func interact_with(player : Player) -> void:
-	print("Picking rocks")
+	# print("Picking rocks")
 	Events.objective_updated.emit(objective_id, "interact", 1)
 
 

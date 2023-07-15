@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://d31o71auillxx"]
+
+[ext_resource type="Script" path="res://Components/Weapon/UI/weapon_screen.gd" id="1_8xfp2"]
+[ext_resource type="PackedScene" uid="uid://bp6qainb55yui" path="res://Components/Weapon/UI/projectile_slot.tscn" id="2_swm8m"]
+
+[node name="WeaponScreen" type="CanvasLayer"]
+script = ExtResource("1_8xfp2")
+projectile_slot_scene = ExtResource("2_swm8m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ProjectilesSlotsContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProjectilesSlot" parent="MarginContainer/PanelContainer/MarginContainer/ProjectilesSlotsContainer" instance=ExtResource("2_swm8m")]
+layout_mode = 2

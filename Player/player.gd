@@ -3,7 +3,9 @@ class_name Player
 
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction_area : Area2D = %InteractionArea2D
+
 @onready var quest_log_component : QuestLogComponent = %QuestLogComponent
+@onready var weapon_component: WeaponComponent = %WeaponComponent
 
 var interactable_nearby : Area2D
 
@@ -35,7 +37,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		if interactable_nearby and interactable_nearby.active:
 			if interactable_nearby.has_method("interact_with"):
 				interactable_nearby.interact_with(self)
-	if Input.is_action_just_pressed("toggle_log"):
+	elif Input.is_action_just_pressed("shoot"):
+		var direction : Vector2 = Vector2.RIGHT
+		if animated_sprite.flip_h:
+			direction = Vector2.LEFT
+		weapon_component.shoot(direction)
+	elif Input.is_action_just_pressed("toggle_log"):
 		quest_log_component.display_quest_log_screen()
 
 

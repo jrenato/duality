@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://hmdvo7qm2jh7"]
+
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="1_64ul5"]
+[ext_resource type="Script" path="res://World/Items/stone_block.gd" id="1_maeie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ajuy"]
+size = Vector2(16, 16)
+
+[node name="StoneBlock" type="StaticBody2D"]
+collision_layer = 5
+script = ExtResource("1_maeie")
+objective_id = "break_stone_block"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_64ul5")
+region_enabled = true
+region_rect = Rect2(176, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_7ajuy")

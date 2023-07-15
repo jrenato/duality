@@ -192,7 +192,7 @@ texture = ExtResource("1_mk1sq")
 14:4/0/physics_layer_0/angular_velocity = 0.0
 
 [resource]
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 6
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.215686, 0.592157, 0.25098, 1)

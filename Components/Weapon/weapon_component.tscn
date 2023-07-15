@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c40nifgbj5d26"]
+[gd_scene load_steps=4 format=3 uid="uid://c40nifgbj5d26"]
 
 [ext_resource type="Script" path="res://Components/Weapon/weapon_component.gd" id="1_baxcr"]
+[ext_resource type="PackedScene" uid="uid://d31o71auillxx" path="res://Components/Weapon/UI/weapon_screen.tscn" id="2_6gsje"]
+[ext_resource type="Resource" uid="uid://cbyx3w2otjtew" path="res://Components/Weapon/Resources/rock_info.tres" id="2_cjq4n"]
 
 [node name="WeaponComponent" type="Node"]
 script = ExtResource("1_baxcr")
+available_projectiles = Array[Resource("res://Components/Weapon/Resources/projectile_info.gd")]([ExtResource("2_cjq4n")])
+
+[node name="WeaponScreen" parent="." instance=ExtResource("2_6gsje")]
+unique_name_in_owner = true
+
+[node name="Projectiles" type="Node" parent="."]
+unique_name_in_owner = true

@@ -5,7 +5,8 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	SoundPlayer.play_music(SoundPlayer.INTRO_MUSIC)
+	# SoundPlayer.play_music(SoundPlayer.INTRO_MUSIC)
+	pass
 
 
 func _on_start_button_pressed() -> void:

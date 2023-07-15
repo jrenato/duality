@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxurph16m1826"]
+[gd_scene load_steps=13 format=3 uid="uid://bxurph16m1826"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_2a34q"]
 [ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="2_6q7im"]
 [ext_resource type="PackedScene" uid="uid://bdps56r6rpulg" path="res://Systems/Quest/Components/quest_log_component.tscn" id="3_4ikp0"]
+[ext_resource type="PackedScene" uid="uid://c40nifgbj5d26" path="res://Components/Weapon/weapon_component.tscn" id="3_uuams"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5681o"]
 atlas = ExtResource("2_6q7im")
@@ -77,6 +78,16 @@ jump_duration = 0.4
 falling_gravity_multiplier = 1.1
 max_acceleration = 1000
 
+[node name="QuestLogComponent" parent="." instance=ExtResource("3_4ikp0")]
+unique_name_in_owner = true
+
+[node name="WeaponComponent" parent="." node_paths=PackedStringArray("spawn_position") instance=ExtResource("3_uuams")]
+unique_name_in_owner = true
+spawn_position = NodePath("../ProjectileSpawn")
+
+[node name="ProjectileSpawn" type="Node2D" parent="."]
+position = Vector2(0, -6)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_wxntt")
@@ -86,9 +97,6 @@ autoplay = "start"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_l0uvb")
-
-[node name="QuestLogComponent" parent="." instance=ExtResource("3_4ikp0")]
-unique_name_in_owner = true
 
 [node name="InteractionArea2D" type="Area2D" parent="."]
 unique_name_in_owner = true

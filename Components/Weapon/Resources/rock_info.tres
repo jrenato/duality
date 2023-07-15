@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ProjectileInfo" load_steps=5 format=3 uid="uid://cbyx3w2otjtew"]
+
+[ext_resource type="Texture2D" uid="uid://gchd5erb0df1" path="res://Assets/new_spritesheet.png" id="1_knvot"]
+[ext_resource type="PackedScene" uid="uid://i7slbi5lhfvu" path="res://Components/Weapon/Projectiles/rock_projectile.tscn" id="1_yg511"]
+[ext_resource type="Script" path="res://Components/Weapon/Resources/projectile_info.gd" id="2_6h47l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvm7b"]
+atlas = ExtResource("1_knvot")
+region = Rect2(320, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_6h47l")
+projectile_scene = ExtResource("1_yg511")
+projectile_icon = SubResource("AtlasTexture_gvm7b")
+damage = 1.0
+reload_time = 1.0
+damage_type = "Impact"
+speed = 100.0
+gravity = 10.0

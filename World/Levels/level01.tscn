@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4w8s0jwpen8a"]
+[gd_scene load_steps=13 format=3 uid="uid://c4w8s0jwpen8a"]
 
 [ext_resource type="TileSet" uid="uid://oid3mad24aji" path="res://World/Levels/tilemapwhite.tres" id="1_onl5i"]
 [ext_resource type="Script" path="res://World/Levels/level.gd" id="1_vtri3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cm35j6jsq14nh" path="res://Characters/npc.tscn" id="10_gdi1d"]
 [ext_resource type="PackedScene" uid="uid://diuas2hefmfa1" path="res://World/Items/rock_pile.tscn" id="11_5si1o"]
 [ext_resource type="PackedScene" uid="uid://cqqkttfowjxod" path="res://World/Components/sign.tscn" id="11_uj0c6"]
+[ext_resource type="PackedScene" uid="uid://hmdvo7qm2jh7" path="res://World/Items/stone_block.tscn" id="12_6byl6"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vtri3")
@@ -67,5 +68,23 @@ objective_id = "read_third_sign"
 
 [node name="RockPile" parent="." instance=ExtResource("11_5si1o")]
 position = Vector2(384, 192)
+
+[node name="StoneBlock" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(456, 176)
+
+[node name="StoneBlock2" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(472, 176)
+
+[node name="StoneBlock3" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(488, 176)
+
+[node name="StoneBlock4" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(456, 160)
+
+[node name="StoneBlock5" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(472, 160)
+
+[node name="StoneBlock6" parent="." instance=ExtResource("12_6byl6")]
+position = Vector2(488, 160)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
