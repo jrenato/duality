@@ -26,7 +26,7 @@ item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_xo2bk"]
 script = ExtResource("2_1deqe")
-objective_id = "break_block"
+objective_id = "break_stone_block"
 objective_name = "Break 5 blocks"
 description = "You need to break 5 blocks"
 objective_type = "kill"
