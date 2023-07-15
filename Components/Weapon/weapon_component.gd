@@ -15,7 +15,7 @@ func add_projectile(projectile_info : ProjectileInfo) -> void:
 		selected_projectile = 0
 	else:
 		available_projectiles[selected_projectile] = projectile_info
-	# weapon_screen.update_projectiles_slots(available_projectiles)
+	weapon_screen.update_projectiles_slots(available_projectiles)
 
 
 func shoot(direction : Vector2) -> void:
