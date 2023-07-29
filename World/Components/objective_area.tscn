@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdq2rf1n0ly80"]
+
+[ext_resource type="Script" path="res://World/Components/objective_area.gd" id="1_xavlt"]
+
+[node name="ObjectiveArea" type="Area2D"]
+script = ExtResource("1_xavlt")

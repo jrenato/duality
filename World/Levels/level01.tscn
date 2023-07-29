@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4w8s0jwpen8a"]
+[gd_scene load_steps=15 format=3 uid="uid://c4w8s0jwpen8a"]
 
 [ext_resource type="TileSet" uid="uid://oid3mad24aji" path="res://World/Levels/tilemapwhite.tres" id="1_onl5i"]
 [ext_resource type="Script" path="res://World/Levels/level.gd" id="1_vtri3"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://diuas2hefmfa1" path="res://World/Items/rock_pile.tscn" id="11_5si1o"]
 [ext_resource type="PackedScene" uid="uid://cqqkttfowjxod" path="res://World/Components/sign.tscn" id="11_uj0c6"]
 [ext_resource type="PackedScene" uid="uid://hmdvo7qm2jh7" path="res://World/Items/stone_block.tscn" id="12_6byl6"]
+[ext_resource type="PackedScene" uid="uid://cdq2rf1n0ly80" path="res://World/Components/objective_area.tscn" id="13_0rrvo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meh58"]
+size = Vector2(24, 40)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_vtri3")
@@ -86,5 +90,13 @@ position = Vector2(472, 160)
 
 [node name="StoneBlock6" parent="." instance=ExtResource("12_6byl6")]
 position = Vector2(488, 160)
+
+[node name="ObjectiveArea" parent="." instance=ExtResource("13_0rrvo")]
+position = Vector2(432, 160)
+objective_id = "small_hill"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
+position = Vector2(-4, -4)
+shape = SubResource("RectangleShape2D_meh58")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
