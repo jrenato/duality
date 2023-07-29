@@ -55,6 +55,7 @@ func load_quests_log() -> void:
 			quest_log_screen.side_quests.add_child(quest_entry)
 
 		quest_entry.button.text = current_quest.quest_details.quest_name
+		quest_entry.check_box.button_pressed = current_quest.is_completed
 		quest_entry.button.pressed.connect(_on_quest_button_pressed.bind(current_quest))
 
 
