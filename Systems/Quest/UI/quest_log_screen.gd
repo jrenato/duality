@@ -30,7 +30,7 @@ func update_quest_details() -> void:
 
 	title_label.text = quest_base.quest_details.quest_name
 	description_label.text = quest_base.quest_details.log_description
-	stage_label.text = quest_base.quest_details.stages[quest_base.current_stage].description
+	stage_label.text = quest_base.current_stage_details.description
 
 	clear_objectives_log()
 	load_objectives_for_stage()
