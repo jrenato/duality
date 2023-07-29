@@ -37,7 +37,7 @@ func update_quest_details() -> void:
 
 
 func load_objectives_for_stage() -> void:
-	var stage : StageDetails = quest_base.quest_details.stages[quest_base.current_stage]
+	var stage : StageDetails = quest_base.current_stage_details
 	for objective in stage.objectives:
 		var stage_objective_screen : QuestLogScreenObjective = quest_log_screen_objective.instantiate()
 		objectives_container.add_child(stage_objective_screen)
