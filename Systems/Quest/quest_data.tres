@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=15 format=3 uid="uid://e4hunpdghwtn"]
+[gd_resource type="Resource" load_steps=17 format=3 uid="uid://e4hunpdghwtn"]
 
 [ext_resource type="Script" path="res://Systems/Quest/Resources/quest_details.gd" id="1_e0vob"]
 [ext_resource type="Script" path="res://Systems/Quest/quest_data.gd" id="1_ysdrv"]
@@ -9,7 +9,7 @@
 script = ExtResource("2_1deqe")
 objective_id = "pick_rocks"
 objective_name = "Pick some rocks"
-description = "You need to harvest 5 carrots"
+description = "Pick some rocks from the rock pile"
 objective_type = "inspect"
 quantity = 1
 is_optional = false
@@ -22,6 +22,25 @@ description = "You need to pick some rocks"
 objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_rgwhj")])
 xp_reward = 10
 currency_reward = 5
+item_rewards = {}
+
+[sub_resource type="Resource" id="Resource_ltayg"]
+script = ExtResource("2_1deqe")
+objective_id = "climb_hill"
+objective_name = "Climb the small hill"
+description = "Get near the stone blocks by climbing the small hill"
+objective_type = "location"
+quantity = 1
+is_optional = false
+bonus_xp = 0
+
+[sub_resource type="Resource" id="Resource_ff3w6"]
+script = ExtResource("3_ickaf")
+stage_name = "Climb the small hill"
+description = "Climb the small hill"
+objectives = Array[ExtResource("2_1deqe")]([SubResource("Resource_ltayg")])
+xp_reward = 0
+currency_reward = 0
 item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_xo2bk"]
@@ -50,7 +69,7 @@ quest_name = "Learn how to shoot"
 log_description = "You need to learn how to shoot rocks."
 tracking_description = "Learn how to shoot rocks"
 is_main_quest = true
-stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd"), SubResource("Resource_d6smt")])
+stages = Array[ExtResource("3_ickaf")]([SubResource("Resource_jnwfd"), SubResource("Resource_ff3w6"), SubResource("Resource_d6smt")])
 
 [sub_resource type="Resource" id="Resource_t6lnb"]
 script = ExtResource("2_1deqe")
