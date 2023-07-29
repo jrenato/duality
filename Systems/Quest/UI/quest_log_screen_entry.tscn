@@ -7,6 +7,11 @@
 size_flags_vertical = 3
 script = ExtResource("1_cmt87")
 
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+focus_mode = 0
+disabled = true
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -15,8 +20,3 @@ theme_override_fonts/font = ExtResource("1_3au7u")
 theme_override_font_sizes/font_size = 32
 text = "Quest Title"
 alignment = 0
-
-[node name="CheckBox" type="CheckBox" parent="."]
-layout_mode = 2
-focus_mode = 0
-disabled = true
