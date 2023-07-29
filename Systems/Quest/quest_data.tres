@@ -26,7 +26,7 @@ item_rewards = {}
 
 [sub_resource type="Resource" id="Resource_ltayg"]
 script = ExtResource("2_1deqe")
-objective_id = "climb_hill"
+objective_id = "small_hill"
 objective_name = "Climb the small hill"
 description = "Get near the stone blocks by climbing the small hill"
 objective_type = "location"
